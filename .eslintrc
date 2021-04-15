@@ -1,0 +1,52 @@
+{
+  "root": true,
+  "env": {
+   "es6": true,
+   "node": true,
+   "browser": true
+  },
+  "extends": [ "airbnb-base", "plugin:import/warnings" ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+   "ecmaVersion": 8,
+   "sourceType": "module",
+   "ecmaFeatures": {
+    "jsx": true,
+    "experimentalObjectRestSpread": true
+   }
+  },
+  "rules": {
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "brace-style": [
+      "error",
+      "stroustrup"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "no-console": [
+      "off"
+    ],
+    "no-var": [
+      "off"
+    ],
+    "one-var": [
+      "off"
+    ],
+    "no-unused-vars" : 2,
+    "no-undef" : 2,
+    "max-len": [
+      "error",
+      {
+        "code": 120
+      }
+    ],
+    "max-classes-per-file": [
+      "off"
+    ]
+  }
+ }
