@@ -12,7 +12,9 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\index.js"
+      "program": "${workspaceFolder}\\index.js",
+      // "args": ["--url", "https://nodejs.org/api/url.html?test=value"]
+      "args": ["--params", "test=value&hallo=welt"]
     }
   ]
 }
