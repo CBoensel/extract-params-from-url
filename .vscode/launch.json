@@ -13,8 +13,9 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}\\index.js",
+      "args": ["https://nodejs.org/api/url.html?test=value"]
       // "args": ["--url", "https://nodejs.org/api/url.html?test=value"]
-      "args": ["--params", "test=value&hallo=welt"]
+      // "args": ["--params", "test=value&hallo=welt"]
     }
   ]
 }

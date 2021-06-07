@@ -6,28 +6,14 @@ import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk';
 
 // own
-import env from './src/config.js';
+import { isValidUrl, writeSearchParamsToArray } from './src/utils.js';
 
 // globals
-const { nodeEnv } = env;
 const { log, debug } = console;
 
 /*
  * helpers
  */
-const writeSearchParamsToArray = (searchParams) => {
-  const searchParamsArray = [];
-
-  searchParams.forEach((value, key) => {
-    searchParamsArray.push([key, value]);
-    if (nodeEnv === 'development') {
-      // test output including potentially duplicated parameters
-      debug(`url param > ${key}: ${value}`);
-    }
-  });
-
-  return searchParamsArray;
-};
 
 const logParam = (value, key) => {
   log(`${key}: ${chalk.cyan(value)}`);
@@ -36,8 +22,6 @@ const logParam = (value, key) => {
 /*
  * main
  */
-
-// todo > test / add params as a command
 
 // get input
 // const argv = yargs(hideBin(process.argv))
@@ -48,8 +32,15 @@ yargs(hideBin(process.argv))
     'the default command',
     () => {},
     (argv) => {
-      const { url, params, verbose } = argv;
+      const { _, verbose } = argv;
+      let { url, params } = argv;
+      const string = _?.pop();
       let searchParams;
+      if (string && isValidUrl(string)) {
+        url = string;
+      } else if (string) {
+        params = string;
+      }
 
       // transform input strings to web api objects
       if (url) {

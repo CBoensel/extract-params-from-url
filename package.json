@@ -7,6 +7,9 @@
   "repository": "https://github.com/CBoensel/extract-params-from-url",
   "author": "cboensel <carsten.boensel@gmx.de>",
   "license": "UNLICENSED",
+  "bin": {
+    "extract-params-from-url": "index.js"
+  },
   "scripts": {
     "lint": "eslint .",
     "start": "node index.js"
