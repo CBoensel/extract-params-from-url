@@ -1,15 +1,17 @@
-import env from './config.js';
+import env from './config';
+
+// globals
+const { debug } = console;
 
 const { nodeEnv } = env;
 
-const writeSearchParamsToArray = (searchParams) => {
+const writeSearchParamsToArray = (searchParams, verbose) => {
   const searchParamsArray = [];
 
   searchParams.forEach((value, key) => {
     searchParamsArray.push([key, value]);
-    if (nodeEnv === 'development') {
+    if (nodeEnv === 'development' || verbose) {
       // test output including potentially duplicated parameters
-      // todo make this dependant on param like "verbose" or so
       debug(`url param > ${key}: ${value}`);
     }
   });
@@ -22,7 +24,8 @@ const isValidUrl = (string) => {
 
   try {
     url = new URL(string);
-  } catch (_) {
+  }
+  catch (_) {
     return false;
   }
 

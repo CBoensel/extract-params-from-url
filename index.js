@@ -6,10 +6,10 @@ import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk';
 
 // own
-import { isValidUrl, writeSearchParamsToArray } from './src/utils.js';
+import { isValidUrl, writeSearchParamsToArray } from './src/utils';
 
 // globals
-const { log, debug } = console;
+const { log } = console;
 
 /*
  * helpers
@@ -38,7 +38,8 @@ yargs(hideBin(process.argv))
       let searchParams;
       if (string && isValidUrl(string)) {
         url = string;
-      } else if (string) {
+      }
+      else if (string) {
         params = string;
       }
 
@@ -52,16 +53,18 @@ yargs(hideBin(process.argv))
         log(`web service url: ${chalk.cyan(webServiceUrl)}`);
 
         searchParams = urlInstance.searchParams;
-      } else if (params) {
+      }
+      else if (params) {
         searchParams = new URLSearchParams(params);
-        log(`no web service url passed. processing raw params`);
-      } else {
+        log('no web service url passed. processing raw params');
+      }
+      else {
         throw new Error('no input param passed');
       }
 
       // get the url-encoded params in a more structured, raw format
       searchParams.sort();
-      const searchParamsArray = writeSearchParamsToArray(searchParams);
+      const searchParamsArray = writeSearchParamsToArray(searchParams, verbose);
       const searchParamsMap = new Map(searchParamsArray);
 
       // identify duplicates
@@ -69,7 +72,8 @@ yargs(hideBin(process.argv))
       if (duplicatesNum) {
         const logString = `${duplicatesNum} duplicates found for given input`;
         log(`${chalk.red(logString)}`);
-      } else {
+      }
+      else {
         log(`${chalk.green('No duplicates found for given input')}`);
       }
 
