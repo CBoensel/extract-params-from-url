@@ -14,7 +14,7 @@
     "lint": "eslint .",
     "format": "todo",
     "start": "node src/index.js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "set NODE_OPTIONS=--experimental-vm-modules && jest"
   },
   "dependencies": {
     "chalk": "^4.1.1",
