@@ -3,19 +3,23 @@ import env from './config.js';
 
 // globals
 const { debug } = console;
-
 const { nodeEnv } = env;
 
-const writeSearchParamsToArray = (searchParams, verbose) => {
+const writeSearchParamsToArray = (searchParams, verbose = false) => {
   const searchParamsArray = [];
 
-  searchParams.forEach((value, key) => {
-    searchParamsArray.push([key, value]);
-    if (nodeEnv === 'development' || verbose) {
-      // test output including potentially duplicated parameters
-      debug(`url param > ${key}: ${value}`);
-    }
-  });
+  if (searchParams && searchParams instanceof URLSearchParams) {
+    searchParams.forEach((value, key) => {
+      searchParamsArray.push([key, value]);
+      if (nodeEnv === 'development' || verbose) {
+        // test output including potentially duplicated parameters
+        debug(`url param > ${key}: ${value}`);
+      }
+    });
+  }
+  else {
+    console.warn('wrong input arg definition for \'searchParams\'');
+  }
 
   return searchParamsArray;
 };
@@ -33,4 +37,4 @@ const isValidUrl = (string) => {
   return url.protocol === 'http:' || url.protocol === 'https:';
 };
 
-export { isValidUrl, writeSearchParamsToArray };
+export { writeSearchParamsToArray, isValidUrl };
