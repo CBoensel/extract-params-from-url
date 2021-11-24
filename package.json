@@ -2,17 +2,19 @@
   "name": "extract-params-from-url",
   "version": "1.0.0",
   "description": "Util extracting the params from an url string",
-  "main": "index.js",
+  "main": "src/index.js",
   "type": "module",
   "repository": "https://github.com/CBoensel/extract-params-from-url",
   "author": "cboensel <carsten.boensel@gmx.de>",
   "license": "UNLICENSED",
   "bin": {
-    "extract-params-from-url": "index.js"
+    "extract-params-from-url": "src/index.js"
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node index.js"
+    "format": "todo",
+    "start": "node src/index.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
     "chalk": "^4.1.1",
@@ -23,6 +25,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^27.1.1"
   }
 }

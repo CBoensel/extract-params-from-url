@@ -1,4 +1,5 @@
-import env from './config';
+// eslint-disable-next-line import/extensions
+import env from './config.js';
 
 // globals
 const { debug } = console;

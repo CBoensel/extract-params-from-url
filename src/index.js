@@ -6,7 +6,8 @@ import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk';
 
 // own
-import { isValidUrl, writeSearchParamsToArray } from './src/utils';
+// eslint-disable-next-line import/extensions
+import { isValidUrl, writeSearchParamsToArray } from './utils.js';
 
 // globals
 const { log } = console;
@@ -23,8 +24,7 @@ const logParam = (value, key) => {
  * main
  */
 
-// get input
-// const argv = yargs(hideBin(process.argv))
+// eslint-disable-next-line no-unused-expressions
 yargs(hideBin(process.argv))
   .scriptName('extract-params-from-url')
   .command(
@@ -32,10 +32,14 @@ yargs(hideBin(process.argv))
     'the default command',
     () => {},
     (argv) => {
+      let searchParams;
+
+      // get input
       const { _, verbose } = argv;
       let { url, params } = argv;
       const string = _?.pop();
-      let searchParams;
+
+      // auto-detect type of input if not specified
       if (string && isValidUrl(string)) {
         url = string;
       }
@@ -74,7 +78,7 @@ yargs(hideBin(process.argv))
         log(`${chalk.red(logString)}`);
       }
       else {
-        log(`${chalk.green('No duplicates found for given input')}`);
+        log(`${chalk.green('no duplicates found for given input')}`);
       }
 
       // print
@@ -96,4 +100,6 @@ yargs(hideBin(process.argv))
     alias: 'p',
     type: 'string',
     description: 'Parse from params'
-  }).argv;
+  })
+  .help('help') // todo
+  .argv;
