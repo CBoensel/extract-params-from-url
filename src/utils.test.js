@@ -1,9 +1,37 @@
-// import { writeSearchParamsToArray, isValidUrl } from './utils';
-import { isValidUrl } from './utils';
+import has from 'has';
+import { isValidUrl, writeSearchParamsToArray } from './utils';
 
-// describe('writeSearchParamsToArray function', () => {
-//   test('todo', () => {});
-// });
+describe('writeSearchParamsToArray function', () => {
+  test('returns empty array for empty or invalid input', () => {
+    [
+      new URLSearchParams(),
+      null,
+      undefined,
+      [],
+      'foo=bar',
+      { foo: 'bar' }
+    ].forEach((searchParams) => {
+      const searchParamsArray = writeSearchParamsToArray(searchParams);
+      expect(Array.isArray(searchParamsArray)).toBeTruthy();
+      expect(searchParamsArray.length).toBe(0);
+    });
+  });
+
+  test('returns array holding key value pair arrays for non-empty input', () => {
+    const searchParamsArray = writeSearchParamsToArray(new URLSearchParams('foo=bar'));
+
+    expect(Array.isArray(searchParamsArray)).toBeTruthy();
+    expect(searchParamsArray.length).toBeGreaterThan(0);
+
+    const firstParam = searchParamsArray[0];
+
+    expect(typeof firstParam).toBe('object');
+    expect(Array.isArray(firstParam)).toBeTruthy();
+    expect(firstParam.length).toBe(2);
+    expect(firstParam[0]).toBe('foo');
+    expect(firstParam[1]).toBe('bar');
+  });
+});
 
 describe('isValidUrl function', () => {
   test('returns false for non-string input arguments', () => {
