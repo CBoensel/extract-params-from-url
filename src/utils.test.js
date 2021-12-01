@@ -1,4 +1,3 @@
-import has from 'has';
 import { isValidUrl, writeSearchParamsToArray } from './utils';
 
 describe('writeSearchParamsToArray function', () => {

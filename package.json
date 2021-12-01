@@ -5,14 +5,15 @@
   "main": "src/index.js",
   "type": "module",
   "repository": "https://github.com/CBoensel/extract-params-from-url",
+  "homepage": "https://github.com/CBoensel/extract-params-from-url#readme",
   "author": "cboensel <carsten.boensel@gmx.de>",
-  "license": "UNLICENSED",
+  "license": "bsd-3-clause",
   "bin": {
     "extract-params-from-url": "src/index.js"
   },
   "scripts": {
     "lint": "eslint .",
-    "format": "prettier to be set up > todo",
+    "format": "prettier --write",
     "start": "node src/index.js",
     "test": "set NODE_OPTIONS=--experimental-vm-modules && jest"
   },
@@ -26,8 +27,10 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^25.3.0",
-    "jest": "^27.1.1"
+    "jest": "^27.1.1",
+    "prettier": "^2.5.0"
   }
 }

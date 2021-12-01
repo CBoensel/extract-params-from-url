@@ -94,12 +94,12 @@ yargs(hideBin(process.argv))
   .option('url', {
     alias: 'u',
     type: 'string',
-    description: 'Parse from url'
+    description: 'Parse from url string'
   })
   .option('params', {
     alias: 'p',
     type: 'string',
-    description: 'Parse from params'
+    description: 'Parse from params string'
   })
   .help('help') // todo
   .argv;
