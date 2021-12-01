@@ -4,14 +4,11 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-
     {
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\src\\index.js",
       "args": ["https://nodejs.org/api/url.html?test=value"]
       // "args": ["--url", "https://nodejs.org/api/url.html?test=value"]

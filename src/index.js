@@ -42,8 +42,7 @@ yargs(hideBin(process.argv))
       // auto-detect type of input if not specified
       if (string && isValidUrl(string)) {
         url = string;
-      }
-      else if (string) {
+      } else if (string) {
         params = string;
       }
 
@@ -57,12 +56,10 @@ yargs(hideBin(process.argv))
         log(`web service url: ${chalk.cyan(webServiceUrl)}`);
 
         searchParams = urlInstance.searchParams;
-      }
-      else if (params) {
+      } else if (params) {
         searchParams = new URLSearchParams(params);
         log('no web service url passed. processing raw params');
-      }
-      else {
+      } else {
         throw new Error('no input param passed');
       }
 
@@ -76,8 +73,7 @@ yargs(hideBin(process.argv))
       if (duplicatesNum) {
         const logString = `${duplicatesNum} duplicates found for given input`;
         log(`${chalk.red(logString)}`);
-      }
-      else {
+      } else {
         log(`${chalk.green('no duplicates found for given input')}`);
       }
 
@@ -101,5 +97,4 @@ yargs(hideBin(process.argv))
     type: 'string',
     description: 'Parse from params string'
   })
-  .help('help') // todo
-  .argv;
+  .help('help').argv; // todo

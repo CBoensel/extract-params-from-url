@@ -2,14 +2,7 @@ import { isValidUrl, writeSearchParamsToArray } from './utils';
 
 describe('writeSearchParamsToArray function', () => {
   test('returns empty array for empty or invalid input', () => {
-    [
-      new URLSearchParams(),
-      null,
-      undefined,
-      [],
-      'foo=bar',
-      { foo: 'bar' }
-    ].forEach((searchParams) => {
+    [new URLSearchParams(), null, undefined, [], 'foo=bar', { foo: 'bar' }].forEach((searchParams) => {
       const searchParamsArray = writeSearchParamsToArray(searchParams);
       expect(Array.isArray(searchParamsArray)).toBeTruthy();
       expect(searchParamsArray.length).toBe(0);
@@ -34,30 +27,17 @@ describe('writeSearchParamsToArray function', () => {
 
 describe('isValidUrl function', () => {
   test('returns false for non-string input arguments', () => {
-    [
-      null,
-      1,
-      undefined,
-      { foo: 'bar' }
-    ].forEach((el) => {
+    [null, 1, undefined, { foo: 'bar' }].forEach((el) => {
       expect(isValidUrl(el)).toBeFalsy();
     });
   });
   test('returns false for invalid url strings', () => {
-    [
-      'foobar',
-      'example.com',
-      '?hello=world&foo=bar'
-    ].forEach((el) => {
+    ['foobar', 'example.com', '?hello=world&foo=bar'].forEach((el) => {
       expect(isValidUrl(el)).toBeFalsy();
     });
   });
   test('returns true for valid url strings', () => {
-    [
-      'http://example.com',
-      'https://example.com',
-      'https://example.com?hello=world&foo=bar'
-    ].forEach((el) => {
+    ['http://example.com', 'https://example.com', 'https://example.com?hello=world&foo=bar'].forEach((el) => {
       expect(isValidUrl(el)).toBeTruthy();
     });
   });

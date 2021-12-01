@@ -16,9 +16,8 @@ const writeSearchParamsToArray = (searchParams, verbose = false) => {
         debug(`url param > ${key}: ${value}`);
       }
     });
-  }
-  else {
-    console.warn('wrong input arg definition for \'searchParams\'');
+  } else {
+    console.warn("wrong input arg definition for 'searchParams'");
   }
 
   return searchParamsArray;
@@ -29,8 +28,7 @@ const isValidUrl = (string) => {
 
   try {
     url = new URL(string);
-  }
-  catch (_) {
+  } catch (_) {
     return false;
   }
 

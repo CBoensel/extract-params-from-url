@@ -19,7 +19,7 @@
   },
   "rules": {
     "linebreak-style": ["error", "windows"],
-    "brace-style": ["error", "stroustrup"],
+    "brace-style": ["error", "1tbs"],
     "comma-dangle": ["error", "never"],
     "no-console": ["off"],
     "no-var": ["off"],
