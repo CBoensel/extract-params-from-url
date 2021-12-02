@@ -82,6 +82,7 @@ yargs(hideBin(process.argv))
       log('\n');
     }
   )
+  .alias('h', 'help')
   .option('verbose', {
     alias: 'v',
     type: 'boolean',
@@ -96,5 +97,4 @@ yargs(hideBin(process.argv))
     alias: 'p',
     type: 'string',
     description: 'Parse from params string'
-  })
-  .help('help').argv; // todo
+  }).argv;
