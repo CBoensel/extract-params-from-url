@@ -2,17 +2,19 @@
 
 Util extracting the parameters from an url string.
 
-This package was written to deal with url-encoded web services more easily.
+The purpose of this package is to analyze and deal with communication of url-encoded web services.
 
 ## Overview
 
-This project provides a wrapper around the Web APIs [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL_API) and [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) to more quickly resolve url parameters.
+The cli resolves and lists parameters attached to a url.
 
-At this time, the util is only intended to be run in the command line. A JS module for development projects might follow at some point in the future.
+The actual code wraps around the Web APIs [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL_API) and [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
+
+At this time, the util is only intended to be run in the command line.
 
 ## Installation
 
-Ensure a recent version of [Node.js](https://nodejs.org/en/) is installed on your device. Then open your terminal and run:
+Ensure a recent [Node.js](https://nodejs.org/en/) version being installed first.
 
 ```bash
 $ npm i -g extract-params-from-url
