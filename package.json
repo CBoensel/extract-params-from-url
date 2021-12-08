@@ -15,7 +15,9 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "start": "node src/index.js",
-    "test": "set NODE_OPTIONS=--experimental-vm-modules && jest"
+    "test": "run-script-os",
+    "test:default": "export NODE_OPTIONS=--experimental-vm-modules && jest",
+    "test:win32": "set NODE_OPTIONS=--experimental-vm-modules && jest"
   },
   "dependencies": {
     "chalk": "^4.1.1",
@@ -31,6 +33,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^25.3.0",
     "jest": "^27.1.1",
-    "prettier": "^2.5.0"
+    "prettier": "^2.5.0",
+    "run-script-os": "^1.1.6"
   }
 }
