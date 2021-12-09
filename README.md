@@ -1,16 +1,18 @@
 # extract-params-from-url
 
-Util extracting the parameters from an url string.
+> cli extracting the parameters from an url string.
 
-The purpose of this package is to analyze and deal with communication of url-encoded web services.
+[![test](https://github.com/CBoensel/extract-params-from-url/actions/workflows/test.yml/badge.svg)](https://github.com/CBoensel/extract-params-from-url/actions/workflows/test.yml)
+
+## Why
+
+The purpose of this package is to support you analyze and deal with communication of url-encoded web services.
 
 ## Overview
 
-The cli resolves and lists parameters attached to a url.
+The cli lists parameters attached to a url that is provided.
 
-The actual code wraps around the Web APIs [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL_API) and [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
-
-At this time, the util is only intended to be run in the command line.
+The script wraps around the Web APIs [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL_API) and [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
 ## Installation
 
