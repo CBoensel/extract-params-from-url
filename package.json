@@ -1,6 +1,6 @@
 {
   "name": "extract-params-from-url",
-  "version": "1.0.0",
+  "version": "1.0.1 ",
   "description": "Util extracting the params from an url string",
   "main": "src/index.js",
   "type": "module",
@@ -11,6 +11,7 @@
   "bin": {
     "extract-params-from-url": "src/index.js"
   },
+  "keywords": ["url", "parameters", "cli"],
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write .",
