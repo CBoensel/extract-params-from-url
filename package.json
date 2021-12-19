@@ -1,6 +1,6 @@
 {
   "name": "extract-params-from-url",
-  "version": "1.0.1 ",
+  "version": "1.0.1",
   "description": "Util extracting the params from an url string",
   "main": "src/index.js",
   "type": "module",
