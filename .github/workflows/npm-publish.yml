@@ -14,7 +14,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 14
+          # 16 has proxy issues with npm ci
+          # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
       - run: npm ci
       - run: npm test
 
@@ -25,7 +27,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '16.x'
+          node-version: '14.x'
+          # 16 has proxy issues with npm ci
+          # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm publish
